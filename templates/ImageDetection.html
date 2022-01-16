@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+Image processing
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <h3>&nbsp;&nbsp;Image Detection</h3>
+    <h5>&nbsp;&nbsp;&nbsp;&nbsp;Upload a new image for which image detection needs to be run</h5>
+    <form method="post" enctype="multipart/form-data">
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<input type="file" name="file1">
+            <br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit">
+    </form>
+    </p>
+    <hr class="new1">
+    <p1>&nbsp;&nbsp;&nbsp;&nbsp;Actual Car name (class) : {{ act_class }}</p1>
+    <br>
+    <p1>&nbsp;&nbsp;&nbsp;&nbsp;Predicted Car name (class) : {{ pred_class }}</p1>
+    <hr class="new1">
+    <p1>&nbsp;&nbsp;&nbsp;&nbsp;Sample Image with bounding box
+        <br>
+        <br>
+        <img src={{urlPredictedImage_BoudingBox}} alt="Chart1" width="600" height="600">
+    </p1>
+</div>
+{% endblock %}

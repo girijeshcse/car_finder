@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %}
+Image processing
+{% endblock %}
+
+{% block content %}
+<div>
+    <h3>&nbsp;&nbsp;EDA and Pre processing input files </h3>
+    <h5>&nbsp;&nbsp;&nbsp;&nbsp;Upload annotations file</h5>
+    <form method=post enctype=multipart/form-data>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="file">Upload File:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type=file name=file>
+            <label for="text">images directory&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input name="text">
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;<input type=submit value=Upload></p>
+    </form>
+    </p>
+    <hr class="new1">
+    <h5>&nbsp;&nbsp;&nbsp;&nbsp;Details about uploaded file </h5>
+    <p1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File name : {{ filename }}</p1>
+    <br>
+    <p1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number of rows in the uploaded file : {{ rows }}</p1>
+    <br>
+    <p1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Number of Columns in the uploaded file : {{ columns }}</p1>
+    <br>
+    <p1>&nbsp;&nbsp; &nbsp;&nbsp;Images Path : {{ direcrtoryPath }}</p1>
+    <br>
+    <p1>&nbsp;&nbsp; &nbsp;&nbsp;dfTrain : {{ dfTrain }}</p1>
+    <br>
+
+</div>
+<div>
+    <p1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sample records of the file uploaded</p1>
+    <table class="center">
+        {% for table in tables %}
+        {{ table|safe }}
+        {% endfor %}
+    </table>
+    <br>
+    <p1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Below table shows the class of cars which are having more number of images.</p1>
+    <br>
+    <table class="center">
+        {% for table in tables_carCountDFHigh %}
+        {{ table|safe }}
+        {% endfor %}
+    </table>
+
+    <hr class="new1">
+    <p1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Below table shows the class of cars which are having less number of images.</p1>
+    <br>
+    <table class="center">
+        {% for table in tables_carCountDFLow %}
+        {{ table|safe }}
+        {% endfor %}
+    </table>
+
+
+</div>
+<hr class="new1">
+<p1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Below Graph shows graph about number of cars vs model</p1>
+<br>
+<br>
+<img src={{url_carModel}} alt="Chart" >
+<hr class="new1">
+<p1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Here we are planning to check if all instances of an images share the same location
+    and orientation within the dataset. As it is observed from the graph the location of car within image varies and there are significant count of images where appearance of car is too small compared to the image itself.</p1>
+<br>
+<br>
+<img src={{url_CarLocationInImage}} alt="Chart1" >
+<hr class="new1">
+<p1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An Image from dataset with bounding box</p1>
+<br>
+<br>
+<img src={{urlsampleImage_BoudingBox}} alt="Chart2" >
+<hr class="new1">
+
+{% endblock %}
