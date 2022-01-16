@@ -55,3 +55,26 @@ Project Organization
 --------
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+
+
+
+The project is developed using pycharm
+To start the server and load HTML files , please use below commands
+
+
+There are 2 file in / folder
+image_detection.py
+imageDetection.py
+
+image_detection.py is the main app folder which can be set as below and run
+set FLASK_DEBUG=1
+set FLASK_APP=image_detection.py
+flask run
+
+src folder is having all the other py files which are having code and these are connected using image_detection.py
+
+imageDetection.py is a single file implementation and can be set and run using below command
+set FLASK_DEBUG=1
+set FLASK_APP=ImageDetection.py
+flask run
+

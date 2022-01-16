@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+Image processing
+{% endblock %}
+
+{% block content %}
+<div>
+    <h4>Press below button to start training</h4>
+    <form method="post" enctype="multipart/form-data">
+        <label for="text">number of epochs</label>
+        <input name="text">
+        <input type="submit" value = "Train Model">
+    </form>
+    <p1> list of accuracy as per epoch :: {{ var }}</p1>
+    <hr class="new1">
+    <p1>&nbsp;&nbsp;&nbsp;&nbsp;Training accuracy plot
+        <br>
+        <img src={{urlTrainingGraphs}} alt="Chart1" width="600" height="600">
+    </p1>
+</div>
+
+{% endblock %}

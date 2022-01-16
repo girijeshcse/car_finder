@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<!-- what type of document -->
+<!-- head and body 2 important sections -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+
+<style>
+/* Red border */
+hr.new1 {
+  border-top: 1px solid white;
+}
+
+/* Dashed red border */
+hr.new2 {
+  border-top: 1px dashed white;
+}
+
+/* Dotted red border */
+hr.new3 {
+  border-top: 1px dotted white;
+}
+
+/* Thick red border */
+hr.new4 {
+  border: 1px solid white;
+}
+
+/* Large rounded green border */
+hr.new5 {
+  border: 10px solid white;
+  border-radius: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: grey;}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Capstone Batch Jan 21-B</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('image_preprocessing')}}">Image preprocessing and EDA<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('model_training')}}">Model training<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('image_detection')}}">Image detection<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% block content %}
+
+{% endblock %}
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+<style>
+.vertical {
+            border-left: 6px solid black;
+            height: 200px;
+            position:absolute;
+            left: 50%;
+        }
+    body{
+        background-color: #212121;
+        color: white
+    }
+</style>
+
+</html>
